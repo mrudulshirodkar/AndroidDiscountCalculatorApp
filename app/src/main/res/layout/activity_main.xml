@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/discountcalculator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewItemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/itemPrice"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/editTextItemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:ems="10"
+        android:hint="Enter List Price"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewItemPrice"
+        app:layout_constraintStart_toEndOf="@+id/textViewItemPrice" />
+
+    <TextView
+        android:id="@+id/textViewSale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/sale"
+        app:layout_constraintStart_toStartOf="@+id/textViewItemPrice"
+        app:layout_constraintTop_toBottomOf="@+id/textViewItemPrice" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewSale"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewSale">
+
+        <RadioButton
+            android:id="@+id/radioButton45"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/_10" />
+
+
+        <RadioButton
+            android:id="@+id/radioButton6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/_15" />
+
+        <RadioButton
+            android:id="@+id/radioButton5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/_18" />
+
+        <RadioButton
+            android:id="@+id/radioButton8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/custom_percentage" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textViewCustom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/custom"
+        app:layout_constraintStart_toStartOf="@+id/textViewSale"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSale" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="222dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="15dp"
+        android:max="100"
+        android:progress="25"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewCustom"
+        app:layout_constraintStart_toEndOf="@+id/textViewCustom" />
+
+    <TextView
+        android:id="@+id/textViewSeekBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/seekbartextpercent"
+        app:layout_constraintBottom_toBottomOf="@+id/seekBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/seekBar"
+        app:layout_constraintTop_toTopOf="@+id/seekBar" />
+
+    <TextView
+        android:id="@+id/textViewDiscount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/discount"
+        app:layout_constraintStart_toStartOf="@+id/textViewCustom"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCustom" />
+
+    <TextView
+        android:id="@+id/textViewFinalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/finalprice"
+        app:layout_constraintStart_toStartOf="@+id/textViewDiscount"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDiscount" />
+
+    <Button
+        android:id="@+id/buttonReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/reset"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFinalPrice" />
+
+    <Button
+        android:id="@+id/buttonCalculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calculate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonReset"
+        app:layout_constraintTop_toTopOf="@+id/buttonReset" />
+
+    <TextView
+        android:id="@+id/textViewDiscountValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="@string/discounttext"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewDiscount"
+        app:layout_constraintStart_toEndOf="@+id/textViewDiscount" />
+
+    <TextView
+        android:id="@+id/textViewFinalPriceValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="@string/finalpricetext"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewFinalPrice"
+        app:layout_constraintStart_toEndOf="@+id/textViewFinalPrice" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
